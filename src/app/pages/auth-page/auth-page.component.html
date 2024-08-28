@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="login-container">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2 *ngIf="isSignIn; else signUp">Sign In</h2>
+    <ng-template #signUp>
+      <h2>Sign up</h2>
+    </ng-template>
+    <div>
+      <label for="username">Email:</label>
+      <input type="text" id="username" formControlName="username">
+      <div
+        *ngIf="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched)">
+        <div *ngIf="loginForm.get('username').errors.required">Email is required</div>
+        <div *ngIf="loginForm.get('username').errors.email">Please enter a valid email address.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" formControlName="password">
+      <div
+        *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+        <div *ngIf="loginForm.get('password').errors.required">Password is required.</div>
+        <div *ngIf="loginForm.get('password').errors.pattern">Your password must be 3-20 characters long and include at least one digit.</div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">
+      <div *ngIf="isSignIn; else signUp">SignIn</div>
+      <ng-template #signUp>Register</ng-template>
+    </button>
+
+    <div (click)="changeToSignUp()" *ngIf="isSignIn">Don't have an account? Create</div>
+  </form>
+</div>

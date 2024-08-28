@@ -1,0 +1,21 @@
+<app-header></app-header>
+<table class="cart-wrapper">
+  <thead class="panel panel-default">
+    <tr class="panel-heading">
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total Price</th>
+      <th>Delete from cart</th>
+    </tr>
+  </thead>
+    <tbody>
+      <app-cart-page-item
+        class="list-group-item"
+        *ngFor="let item of cartItems; let i = index"
+        [cartItem]="item">
+      </app-cart-page-item>
+    </tbody>
+
+</table>

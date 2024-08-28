@@ -1,0 +1,37 @@
+<form [formGroup]="myForm">
+  <h1 class="filter-header">Filters</h1>
+  <div class="form-group">
+    <app-filter-price [controlPriceFrom]="myForm.get('priceFrom')"
+                      [controlPriceTo]="myForm.get('priceTo')"
+                      (changed)="handlePriceChanged($event)">
+    </app-filter-price>
+  </div>
+  <div class="form-group">
+    <app-filter-rating [controlRatingFrom]="myForm.get('ratingFrom')"
+                       [controlRatingTo]="myForm.get('ratingTo')"
+                       (changed)="handleRatingChanged($event)">
+
+    </app-filter-rating>
+  </div>
+  <div class="form-group">
+    <app-filter-stock [controlIsInStock]="myForm.get('isInStock')"
+                      (changed)="handleIsInStockChanged($event)">
+
+    </app-filter-stock>
+  </div>
+  <div class="form-group">
+    <app-filter-reviews [controlHasReviews]="myForm.get('hasReviews')"
+                        (changed)="handleHasReviews($event)">
+
+    </app-filter-reviews>
+  </div>
+  <div class="message">
+    <h4 *ngIf="countOfProducts != 0; else defaultMsg">Found {{ countOfProducts }} products</h4>
+    <ng-template #defaultMsg>
+      <h4>No data</h4>
+    </ng-template>
+  </div>
+  <div class="form-group">
+    <button class="clear-all" (click)="clearAllFilters()">Clear all</button>
+  </div>
+</form>

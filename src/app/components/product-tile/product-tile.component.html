@@ -1,0 +1,15 @@
+<div class="product-tile" [class.invisible]="!isVisible">
+  <div class="product-main-data" [routerLink]="['/products', product.id]">
+    <app-product-image class="product-image" [imageUrl]="product.image"></app-product-image>
+    <app-product-title [productTitle]="product.title"></app-product-title>
+  </div>
+  <div class="product-actions">
+    <app-add-to-cart-button [product]="product"></app-add-to-cart-button>
+    <app-delete-button (delete)="hideProduct($event)" [product]="product"></app-delete-button>
+    <app-edit-button [product]="product"></app-edit-button>
+  </div>
+  <div class="product-rating-price">
+    <app-product-rate [rate]="product.rating.rate"></app-product-rate>
+    <app-product-price [price]="product.price"></app-product-price>
+  </div>
+</div>

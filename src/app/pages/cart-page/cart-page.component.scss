@@ -1,0 +1,22 @@
+.panel-heading {
+  font-family: 'Lato', sans-serif;
+  color: #436f85;
+  display: flex;
+  border-style: solid;
+  border-color: black;
+}
+
+thead {
+  width: 1000px;
+}
+
+table {
+  width: 1000px;
+}
+
+th {
+  background-color: rgba(35, 255, 0, 0.06);
+  border: 1px solid black;
+  text-align: center;
+  width: 180px;
+}

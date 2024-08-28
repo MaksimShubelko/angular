@@ -1,0 +1,10 @@
+<div class="filter-badges">
+  <div class="filter-badge"
+       [class.invisible-budget]="!budge.isVisible"
+       *ngFor="let budge of this.filterBudges">
+    <span>{{ budge.label }}</span>
+    <button class="close-btn" (click)="budge.handleClick()">
+      X
+    </button>
+  </div>
+</div>

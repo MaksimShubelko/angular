@@ -1,0 +1,11 @@
+<div class="reviews-container">
+  <h1 *ngIf="reviews.length > 0; else noReviewsMessage">Reviews</h1>
+  <ng-template #noReviewsMessage>
+    <h1>No reviews</h1>
+  </ng-template>
+  <app-product-review
+    *ngFor="let review of reviews"
+    [review]="review">
+
+  </app-product-review>
+</div>

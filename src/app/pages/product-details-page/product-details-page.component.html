@@ -1,0 +1,18 @@
+<body>
+<app-header></app-header>
+<div class="product-container">
+  <app-product-image [imageUrl]="product.image"></app-product-image>
+  <div class="product-details">
+    <app-product-title [productTitle]="product.title"></app-product-title>
+    <div class="product-rating">
+      <app-product-rate [rate]="product.rating.rate"></app-product-rate>
+      <app-product-count-reviews [reviewsCount]="reviews.length"></app-product-count-reviews>
+    </div>
+    <app-add-to-cart-button [product]="product" [isDisabledWhenOutOfStock]="true"></app-add-to-cart-button>
+    <app-product-stock-availability [stock]="product.stock"></app-product-stock-availability>
+    <app-product-price [price]="product.price"></app-product-price>
+    <app-product-description [description]="product.description"></app-product-description>
+  </div>
+</div>
+<app-product-reviews [reviews]="reviews"></app-product-reviews>
+</body>

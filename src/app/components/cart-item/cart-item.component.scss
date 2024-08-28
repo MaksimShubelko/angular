@@ -1,0 +1,26 @@
+.cart-item-wrapper {
+  border: 1px solid;
+}
+
+tr {
+  width: 1000px;
+  background-color: rgba(255, 255, 0, 0.34);
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+td {
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  width: 180px;
+}
+
+button {
+  height: 30px;
+  width: 50px;
+  background-color: #66f166;
+}
+
+

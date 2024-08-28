@@ -1,0 +1,22 @@
+.product-tiles {
+  flex: 1 1 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px 30px;
+  grid-auto-rows: 500px;
+  grid-auto-columns: 500px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}

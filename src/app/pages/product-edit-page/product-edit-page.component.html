@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="product-form-container">
+  <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" class="product-form" ngForm>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input id="image" name="image" [(ngModel)]="product.image" required class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="product.title" required class="form-control">
+      <div
+        *ngIf="productForm.controls.name?.invalid && (productForm.controls.name?.dirty || productForm.controls.name?.touched)"
+        class="invalid-feedback">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="text" id="price" name="price" [(ngModel)]="product.price"
+             [class.border-red]="priceControl.invalid && (priceControl.dirty || priceControl.touched)" required
+             pattern="\d+(\.\d+)?"
+             #priceControl="ngModel" class="form-control">
+      <div *ngIf="priceControl.invalid && (priceControl.dirty || priceControl.touched)" class="invalid-feedback">
+        Price must be a valid number (integer or fractional).
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inStock">In Stock:</label>
+      <input type="text" id="inStock" name="inStock" [(ngModel)]="product.stock" required pattern="\d+"
+             #inStockControl="ngModel" class="form-control"
+             [class.border-red]="inStockControl.invalid && (inStockControl.dirty || inStockControl.touched)">
+      <div *ngIf="inStockControl.invalid && (inStockControl.dirty || inStockControl.touched)" class="invalid-feedback">
+        In Stock must be a valid integer.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="product.description" required
+                class="form-control"></textarea>
+      <div
+        *ngIf="productForm.controls.description?.invalid && (productForm.controls.description?.dirty || productForm.controls.description?.touched)"
+        class="invalid-feedback">
+        Description is required.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="productForm.invalid" class="button">Save</button>
+  </form>
+
+  <div class="product-image-container">
+    <app-product-image [imageUrl]="product.image"></app-product-image>
+  </div>
+</div>
