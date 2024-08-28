@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+out-tsc/
+
+# Temporary files
+*.tmp
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Environment files
+*.env
+
+# Coverage reports
+coverage/
+
+# Angular specific
+*.ngfactory.ts
+*.ngsummary.json
+*.js
+*.map
