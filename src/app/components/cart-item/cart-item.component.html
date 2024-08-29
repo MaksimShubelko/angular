@@ -1,0 +1,10 @@
+<tr [@fadeInOut]="state" class="cart-item-wrapper">
+  <td>{{ cartItem.id }}</td>
+  <td>{{ cartItem.title }}</td>
+  <td>{{ cartItem.count }}</td>
+  <td>${{ cartItem.price }}</td>
+  <td>${{ cartItem.count * cartItem.price }}</td>
+  <td>
+    <button (click)="deleteFromCart(cartItem.id); toggleVisibility()">Delete</button>
+  </td>
+</tr>

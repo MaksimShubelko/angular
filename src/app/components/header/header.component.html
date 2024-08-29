@@ -1,0 +1,23 @@
+<body>
+<header class="header">
+  <div class="header__container">
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item">
+          <a (click)="onClickShopButton()" class="header__link">Shop</a>
+        </li>
+        <li class="header__item">
+          <a (click)="onClickAuthenticationButton()" [class.disable]="authService.checkIsLoggedIn()"
+             class="header__link">Authentication</a>
+        </li>
+        <li class="header__item">
+          <a (click)="onClickCartButton()" class="header__link">Cart</a>
+        </li>
+        <li class="header__item">
+          <a (click)="onClickLogOutButton()" [class.disable]="!authService.checkIsLoggedIn()" class="header__link">Log Out</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+</body>

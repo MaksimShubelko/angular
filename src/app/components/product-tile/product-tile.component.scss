@@ -1,0 +1,30 @@
+.product-tile {
+  background-color: rgba(248, 247, 245, 0.8);
+  font-size: 18px;
+  width: 200px;
+  min-height: 120px;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+  position: relative;
+  top: 40px;
+}
+
+.invisible {
+  display: none;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.product-rating-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+}

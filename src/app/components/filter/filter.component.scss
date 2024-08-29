@@ -1,0 +1,40 @@
+.filters {
+  flex: 0 0 200px;
+  background-color: lightgrey;
+  border-width: 3px;
+  border-color: gray;
+  border-style: solid;
+  height: 90vh;
+  bottom: 0;
+  width: 200px;
+  padding: 20px;
+}
+
+.filter-header {
+  text-align: center;
+  font-family: "Phylosopher", "DejaVu Sans Light", serif;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-basis: 100px;
+  margin-right: 0;
+}
+
+.message {
+  text-align: center;
+  color: #666666;
+}
+
+.clear-all {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
