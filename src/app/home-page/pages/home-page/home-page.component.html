@@ -1,15 +1,57 @@
 <app-header></app-header>
-<app-filter-budges></app-filter-budges>
-<div class="container">
-  <p *ngIf="loading">Loading...</p>
-  <app-filter [route]="route"
-              (paramsEvent)="getProducts($event)"
-              [countOfProducts]="countOfProducts"></app-filter>
-  <div class="product-tiles">
-    <app-product
-      class="product-tile"
-      *ngFor="let product of products"
-      [product]="product">
-    </app-product>
-  </div>
+<div class="filter-badges__wrapper">
+    <div
+            *ngFor="let badgeTile of badgeTiles; let i = index"
+            class="filter-badges__item"
+    >
+        <span>{{ badgeTile }}</span>
+        <button
+                type="button"
+                class="filter-badges__button"
+                (click)="removeFilter(i)">
+            ✕
+        </button>
+    </div>
+    <div class="container">
+        <p *ngIf="loading">Loading...</p>
+        <form class="filters" (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="input-group">
+                <div>
+                    <span class="filter-title">Price</span>
+                </div>
+                <input class="filter-input" placeholder="from" [(ngModel)]="filtersObj['minPrice']" name="minPrice">
+                <input class="filter-input" placeholder="to" [(ngModel)]="filtersObj['maxPrice']" name="maxPrice">
+            </div>
+            <div class="input-group">
+                <div>
+                    <span class="filter-title">Rating</span>
+                </div>
+                <input class="filter-input" placeholder="from" [(ngModel)]="filtersObj['minRating']" name="minRating">
+                <input class="filter-input" placeholder="to" [(ngModel)]="filtersObj['maxRating']" name="maxRating">
+            </div>
+            <div class="input-group">
+                <span class="filter-title">Stock</span>
+                <input type="checkbox" class="filter-input" placeholder="from" [(ngModel)]="filtersObj['stockPresence']"
+                       name="stockPresence">
+            </div>
+            <div class="input-group">
+                <span class="filter-title">Reviews</span>
+                <input type="checkbox" class="filter-input" placeholder="from"
+                       [(ngModel)]="filtersObj['reviewsPresence']" name="reviewsPresence">
+            </div>
+            <span> {{ products.length }} product(s)</span>
+            <div (click)="onClear()">
+                <button class="clear-filter-button">Clear filters</button>
+            </div>
+            <button class="apply-filter-button" type="submit">Find</button>
+        </form>
+        <div class="product-tiles">
+            <app-product
+                    *ngFor="let product of products"
+                    [product]="product"
+                    class="product-tile">
+            </app-product>
+
+        </div>
+    </div>
 </div>

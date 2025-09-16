@@ -1,18 +1,18 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IReview} from "../../../shared/models/review";
+import {IReview} from '../../../shared/models/review';
 
 @Component({
-  selector: 'app-product-reviews',
-  templateUrl: './product-reviews.component.html',
-  styleUrls: ['./product-reviews.component.scss']
+    selector: 'app-product-reviews',
+    templateUrl: './product-reviews.component.html',
+    styleUrls: ['./product-reviews.component.scss']
 })
 export class ProductReviewsComponent implements OnInit {
-  @Input() reviews: IReview[];
+    @Input() reviews: IReview[];
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

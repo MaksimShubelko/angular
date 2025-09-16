@@ -1,4 +1,4 @@
-<div class="product-tile" [class.invisible]="!isVisible">
+<div [class.invisible]="!isVisible">
   <div class="product-main-data" [routerLink]="['/products', product.id]">
     <app-product-image class="product-image" [imageUrl]="product.image"></app-product-image>
     <app-product-title [productTitle]="product.title"></app-product-title>
