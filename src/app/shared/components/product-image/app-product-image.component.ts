@@ -6,16 +6,9 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['app-product-image.component.scss',
         '../../../home-page/pages/home-page/home-page.component.scss']
 })
-export class AppProductImageComponent implements OnInit {
+export class AppProductImageComponent {
     defaultImageUrl: string = 'assets/images/default-image.png';
     @Input() imageUrl: string;
-
-    constructor() {
-    }
-
-    ngOnInit(): void {
-
-    }
 
     onImageLoadError() {
         this.imageUrl = this.defaultImageUrl;

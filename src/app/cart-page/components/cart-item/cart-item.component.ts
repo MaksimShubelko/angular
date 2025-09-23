@@ -20,14 +20,11 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         ])
     ]
 })
-export class CartItemComponent implements OnInit {
+export class CartItemComponent {
     @Input() cartItem: ICartItem;
     state = 'in';
 
     constructor(private cartService: CartService) {
-    }
-
-    ngOnInit(): void {
     }
 
     toggleVisibility() {
