@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AuthGuard} from './auth/util/auth-guard.guard';
+import {AuthGuard} from './auth/guards/auth.guard';
 import {HomePageModule} from './home-page/home-page.module';
 import {HomePageRoutingModule} from './home-page/home-page-routing.module';
 import {ProductDetailsModule} from './product-details/product-details.module';

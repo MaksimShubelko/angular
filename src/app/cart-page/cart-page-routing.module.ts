@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CartPageComponent} from './pages/cart-page/cart-page.component';
+import {CartComponent} from './pages/cart-page/cart.component';
 
 
 const routes: Routes = [
-    {path: 'cart', component: CartPageComponent},
+    {path: 'cart', component: CartComponent},
 
 ];
 

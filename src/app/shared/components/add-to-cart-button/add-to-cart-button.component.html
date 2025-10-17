@@ -1,3 +1,4 @@
+<div>
 <div *ngIf="!isClicked; else select_products_count">
     <button (click)="handleClick()" [disabled]="isDisabled()" class="button">Add to Cart</button>
 </div>
@@ -6,3 +7,4 @@
     <input [value]="addedProducts" class="product-count">
     <button (click)="increaseProductQty()" [disabled]="isMaxQty()" class="button button-row">↑</button>
 </ng-template>
+</div>

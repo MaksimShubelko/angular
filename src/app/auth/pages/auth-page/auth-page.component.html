@@ -16,7 +16,7 @@
         </div>
 
         <div>
-            <label for="password">Пароль:</label>
+            <label for="password">Password:</label>
             <input formControlName="password" id="password" type="password">
             <div
                     *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
@@ -27,11 +27,14 @@
             </div>
         </div>
 
-        <button [disabled]="loginForm.invalid" type="submit">
-            <div *ngIf="isSignIn; else signUp">SignIn</div>
-            <ng-template #signUp>Register</ng-template>
-        </button>
+        <div class="button">
+            <button [disabled]="loginForm.invalid" type="submit">
+                <div *ngIf="isSignIn">Sign in</div>
+                <div *ngIf="!isSignIn">Sign up</div>
+            </button>
+        </div>
 
         <div (click)="changeToSignUp()" *ngIf="isSignIn">Don't have an account? Create</div>
+        <div (click)="changeToSignIn()" *ngIf="!isSignIn">Already have an account? Sign In</div>
     </form>
 </div>

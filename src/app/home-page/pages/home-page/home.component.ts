@@ -6,17 +6,15 @@ import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-home-page',
-    templateUrl: 'home-page.component.html',
-    styleUrls: ['home-page.component.scss']
+    templateUrl: 'home.component.html',
+    styleUrls: ['home.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomeComponent implements OnInit {
     products: IProduct[];
     countOfProducts: number;
     loading: boolean = false
     badgeTiles: string[];
     @ViewChild('f') slForm: NgForm;
-    currentFiltersRoute: {} = {};
-    badgesTiles: string[] = [];
     filtersObj: { [key: string]: null | number | boolean } = {
         minPrice: null,
         maxPrice: null,
@@ -42,7 +40,6 @@ export class HomePageComponent implements OnInit {
                 this.getProducts(queryParams);
             }
         })
-
     }
 
     ngOnInit(): void {

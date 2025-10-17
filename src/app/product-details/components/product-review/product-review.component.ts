@@ -6,13 +6,6 @@ import {IReview} from '../../../shared/models/review';
     templateUrl: './product-review.component.html',
     styleUrls: ['./product-review.component.scss']
 })
-export class ProductReviewComponent implements OnInit {
+export class ProductReviewComponent {
     @Input() review: IReview;
-
-    constructor() {
-    }
-
-    ngOnInit(): void {
-    }
-
 }

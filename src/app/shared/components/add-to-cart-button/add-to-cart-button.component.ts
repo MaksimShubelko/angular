@@ -71,7 +71,7 @@ export class AddToCartButtonComponent implements OnInit {
     }
 
     isDisabled() {
-        if (this.isDisabledWhenOutOfStock && this.stock == 0) {
+        if (this.isDisabledWhenOutOfStock && this.stock === 0) {
             return true;
         }
     }

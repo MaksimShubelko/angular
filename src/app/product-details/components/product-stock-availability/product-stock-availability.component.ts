@@ -5,7 +5,7 @@ import {Component, Input, OnInit} from '@angular/core';
     templateUrl: './product-stock-availability.component.html',
     styleUrls: ['./product-stock-availability.component.scss']
 })
-export class ProductStockAvailabilityComponent implements OnInit {
+export class ProductStockAvailabilityComponent {
     @Input() stock: number;
     OUT_OF_STOCK_MESSAGE: string = 'Out of stock';
     OUT_OF_STOCK_CLASS: string = 'out-of-stock';
@@ -14,12 +14,6 @@ export class ProductStockAvailabilityComponent implements OnInit {
     IN_STOCK_MESSAGE: string = 'In stock';
     IN_STOCK_CLASS: string = 'in-stock';
     IN_STOCK_THRESHOLD: number = 10;
-
-    constructor() {
-    }
-
-    ngOnInit(): void {
-    }
 
     getClass() {
         if (this.stock == 0) {

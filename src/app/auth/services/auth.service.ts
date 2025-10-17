@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
     providedIn: 'root'
 })
 export class AuthService {
-    private isLoggedIn: boolean;
+    private isLoggedIn: boolean = false;
     private apiUrl = 'http://localhost:3000/users';
 
     constructor(private http: HttpClient) {

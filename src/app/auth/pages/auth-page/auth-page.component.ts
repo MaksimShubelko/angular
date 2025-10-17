@@ -71,4 +71,8 @@ export class AuthPageComponent implements OnInit {
         this.isSignIn = false;
     }
 
+    changeToSignIn() {
+        this.isSignIn = true;
+    }
+
 }

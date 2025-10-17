@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ProductEditPageComponent} from './pages/product-edit-page/product-edit-page.component';
-import {AuthGuard} from '../auth/util/auth-guard.guard';
+import {AuthGuard} from '../auth/guards/auth.guard';
 
 
 const routes: Routes = [

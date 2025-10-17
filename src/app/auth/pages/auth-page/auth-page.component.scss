@@ -32,9 +32,16 @@
   border-radius: 3px;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-form button {
-  width: 100%;
+  width: 75%;
   padding: 10px;
+  height: 40px;
   background-color: #4CAF50;
   color: white;
   border: none;
