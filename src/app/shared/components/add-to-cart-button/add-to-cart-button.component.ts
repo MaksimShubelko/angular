@@ -21,13 +21,7 @@ export class AddToCartButtonComponent implements OnInit {
     ngOnInit(): void {
         this.isClicked = false;
         this.stock = this.product.stock;
-        this.cartService.getCountById(this.product.id)
-            .subscribe((count) => {
-                    this.addedProducts = count;
-                },
-                (error) => {
-                    this.addedProducts = 0;
-                });
+        this.cartService.getCountById(this.product.id);
     }
 
     handleClick() {
@@ -35,7 +29,7 @@ export class AddToCartButtonComponent implements OnInit {
     }
 
     decreaseProductQty() {
-        this.cartService.getById(this.product.id).subscribe(cartItem => this.cartItem = cartItem);
+        this.cartService.getById(this.product.id);
         this.addedProducts--;
         if (this.addedProducts == 0) {
             this.cartService.deleteFromCart(this.product.id);
@@ -61,7 +55,7 @@ export class AddToCartButtonComponent implements OnInit {
             };
             this.cartService.addItemToCart(this.cartItem);
         } else {
-            this.cartService.getById(this.product.id).subscribe(cartItem => this.cartItem = cartItem);
+            this.cartService.getById(this.product.id);
             if (this.addedProducts < this.product.stock) {
                 this.addedProducts++;
                 this.cartItem.count = this.addedProducts;

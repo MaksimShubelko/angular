@@ -7,10 +7,10 @@ import {IReview} from '../../../shared/models/review';
 
 @Component({
     selector: 'app-product-details-page',
-    templateUrl: 'product-details-page.component.html',
-    styleUrls: ['product-details-page.component.scss']
+    templateUrl: 'product-details.component.html',
+    styleUrls: ['product-details.component.scss']
 })
-export class ProductDetailsPageComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit {
     id: number;
     loading: boolean = false;
     product: IProduct;

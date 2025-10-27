@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ProductDetailsPageComponent} from './pages/product-details-page/product-details-page.component';
+import {ProductDetailsComponent} from './pages/product-details-page/product-details.component';
 import {SharedModule} from '../shared/shared.module';
 import {ProductStockAvailabilityComponent} from './components/product-stock-availability/product-stock-availability.component';
 import {ProductReviewComponent} from './components/product-review/product-review.component';
@@ -8,7 +8,7 @@ import {ProductReviewsComponent} from './components/product-reviews/product-revi
 
 @NgModule({
     declarations: [
-        ProductDetailsPageComponent,
+        ProductDetailsComponent,
         ProductStockAvailabilityComponent,
         ProductReviewComponent,
         ProductReviewsComponent],

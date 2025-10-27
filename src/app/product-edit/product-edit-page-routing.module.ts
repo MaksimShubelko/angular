@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ProductEditPageComponent} from './pages/product-edit-page/product-edit-page.component';
+import {ProductEditComponent} from './pages/product-edit-page/product-edit.component';
 import {AuthGuard} from '../auth/guards/auth.guard';
 
 
 const routes: Routes = [
-    {path: 'product/edit/:id', component: ProductEditPageComponent, canActivate: [AuthGuard]},
+    {path: 'product/edit/:id', component: ProductEditComponent, canActivate: [AuthGuard]},
 
 ];
 

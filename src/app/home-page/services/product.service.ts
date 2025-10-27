@@ -63,8 +63,6 @@ export class ProductService {
         keys.forEach((key) => {
             const value = queryParams[key];
             if (value !== undefined && value !== null && value !== '') {
-                console.log(value == 'true')
-                console.log(value);
                 httpParams = httpParams.set(this.routerObj[key].queryParam, value === 'true' ? 0 : value);
             }
         });

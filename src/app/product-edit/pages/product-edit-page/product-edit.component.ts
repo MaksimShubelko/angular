@@ -6,11 +6,11 @@ import {IProduct} from '../../../shared/models/product';
 
 @Component({
     selector: 'app-product-edit-page',
-    templateUrl: './product-edit-page.component.html',
-    styleUrls: ['./product-edit-page.component.scss'],
+    templateUrl: './product-edit.component.html',
+    styleUrls: ['./product-edit.component.scss'],
     exportAs: 'productForm'
 })
-export class ProductEditPageComponent implements OnInit {
+export class ProductEditComponent implements OnInit {
     product: IProduct;
 
     constructor(

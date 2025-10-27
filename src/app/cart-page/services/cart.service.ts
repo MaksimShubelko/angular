@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, toArray} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {delay, map, retry} from 'rxjs/operators';
+import {delay, retry} from 'rxjs/operators';
 import {ICartItem} from '../../shared/models/cart-item';
 
 @Injectable({
@@ -19,21 +19,16 @@ export class CartService {
             retry(2));
     }
 
-    getById(id: number): Observable<ICartItem> {
-        return this.http.get<ICartItem>(this.apiUrl + id).pipe(
-            delay(100),
-            retry(2));
+    getById(id: number) {
+        return this.getAll().subscribe((items) => {return items.find((item) => item.id === id)});
     }
 
     updateCartItem(updatedCartItem: ICartItem) {
         this.http.put<ICartItem>(this.apiUrl + updatedCartItem.id, updatedCartItem).subscribe();
     }
 
-    getCountById(id: number): Observable<number> {
-        return this.http.get<ICartItem>(this.apiUrl + id).pipe(
-            delay(100),
-            retry(2),
-            map(item => item.count));
+    getCountById(id: number) {
+        return this.getAll().subscribe((items) => {return items.find((item) => item.id === id)?.count});
     }
 
     deleteFromCart(id: number): void {
