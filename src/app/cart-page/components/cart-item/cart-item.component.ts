@@ -10,7 +10,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     animations: [
         trigger('fadeInOut', [
             state('in', style({opacity: 1})),
-            state('out', style({opacity: 0})),
+            state('out', style({opacity: 0, display: 'none'})),
             transition('in => out', [
                 animate('0.5s ease-in-out')
             ]),

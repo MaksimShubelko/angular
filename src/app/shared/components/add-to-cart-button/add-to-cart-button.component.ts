@@ -21,7 +21,12 @@ export class AddToCartButtonComponent implements OnInit {
     ngOnInit(): void {
         this.isClicked = false;
         this.stock = this.product.stock;
-        this.cartService.getCountById(this.product.id);
+        this.cartService.getAll().subscribe(
+            (cartItems) => {
+                this.cartItem = cartItems.filter((cartItem) => cartItem.id === this.product.id)[0];
+                this.addedProducts = this.cartItem?.count ?? 0;
+            }
+        );
     }
 
     handleClick() {
@@ -29,7 +34,6 @@ export class AddToCartButtonComponent implements OnInit {
     }
 
     decreaseProductQty() {
-        this.cartService.getById(this.product.id);
         this.addedProducts--;
         if (this.addedProducts == 0) {
             this.cartService.deleteFromCart(this.product.id);
@@ -44,25 +48,21 @@ export class AddToCartButtonComponent implements OnInit {
     }
 
     increaseProductQty() {
-        let product = this.product;
-        if (this.addedProducts == 0) {
-            this.addedProducts++;
-            this.cartItem = new class implements ICartItem {
-                count: number = 1;
-                id: number = product.id;
-                price: number = product.price;
-                title: string = product.title;
+        this.addedProducts++;
+        if (this.addedProducts == 1) {
+            this.cartItem = {
+                id: this.product.id,
+                price: this.product.price,
+                title: this.product.title,
+                count: this.addedProducts
             };
             this.cartService.addItemToCart(this.cartItem);
         } else {
-            this.cartService.getById(this.product.id);
-            if (this.addedProducts < this.product.stock) {
-                this.addedProducts++;
-                this.cartItem.count = this.addedProducts;
-                this.cartService.updateCartItem(this.cartItem);
-            }
+            this.cartItem.count = this.addedProducts;
+            this.cartService.updateCartItem(this.cartItem);
         }
     }
+
 
     isDisabled() {
         if (this.isDisabledWhenOutOfStock && this.stock === 0) {
