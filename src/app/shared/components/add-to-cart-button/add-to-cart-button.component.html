@@ -1,5 +1,5 @@
 <div>
-<div *ngIf="!isClicked; else select_products_count">
+    <div *ngIf="addedProducts == 0; else select_products_count">
     <button (click)="handleClick()" [disabled]="isDisabled()" class="button">Add to Cart</button>
 </div>
 <ng-template #select_products_count>

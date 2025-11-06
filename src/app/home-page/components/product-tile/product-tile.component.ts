@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {IProduct} from "../../../shared/models/product";
 import {ProductService} from "../../services/product.service";
 import {AuthService} from '../../../auth/services/auth.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,11 +15,12 @@ export class AppProductComponent {
   isVisible: boolean = true;
 
   constructor(private productService: ProductService,
-              protected auth: AuthService) {
+              protected auth: AuthService,
+              protected router: Router) {
   }
 
   handleDeleteButtonClick() {
     this.productService.delete(this.product.id);
-
+    this.isVisible = false;
   }
 }

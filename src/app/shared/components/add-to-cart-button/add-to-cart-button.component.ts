@@ -31,6 +31,16 @@ export class AddToCartButtonComponent implements OnInit {
 
     handleClick() {
         this.isClicked = true;
+        if (this.addedProducts == 0) {
+            this.addedProducts++;
+            this.cartItem = {
+                id: this.product.id,
+                price: this.product.price,
+                title: this.product.title,
+                count: this.addedProducts
+            };
+            this.cartService.addItemToCart(this.cartItem);
+        }
     }
 
     decreaseProductQty() {
@@ -49,18 +59,9 @@ export class AddToCartButtonComponent implements OnInit {
 
     increaseProductQty() {
         this.addedProducts++;
-        if (this.addedProducts == 1) {
-            this.cartItem = {
-                id: this.product.id,
-                price: this.product.price,
-                title: this.product.title,
-                count: this.addedProducts
-            };
-            this.cartService.addItemToCart(this.cartItem);
-        } else {
-            this.cartItem.count = this.addedProducts;
-            this.cartService.updateCartItem(this.cartItem);
-        }
+        this.cartItem.count = this.addedProducts;
+        this.cartService.updateCartItem(this.cartItem);
+
     }
 
 
