@@ -11,7 +11,18 @@ import {IProduct} from '../../../shared/models/product';
     exportAs: 'productForm'
 })
 export class ProductEditComponent implements OnInit {
-    product: IProduct;
+    product: IProduct = {
+        image: '',
+        id: 0,
+        title: '',
+        price: 0,
+        description: '',
+        stock: 0,
+        rating: {
+            rate: 0,
+            count: 0
+        }
+    };
 
     constructor(
         private activatedRoute: ActivatedRoute,

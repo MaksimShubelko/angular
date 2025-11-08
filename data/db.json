@@ -36,7 +36,8 @@
       "rating": {
         "rate": 3.7,
         "count": 95
-      }
+      },
+      "inStock": 48
     },
     {
       "id": "5",
