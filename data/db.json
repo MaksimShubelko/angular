@@ -27,43 +27,6 @@
       "inStock": "8"
     },
     {
-      "id": "3",
-      "title": "Vince Camuto Eterno Eau de Toilette, 100ml",
-      "price": 286,
-      "description": "Vince Camuto is a new fragrance brand. The collection includes women's fragrances as Amore, Fiori, Vince Camuto and Vince Camuto Femme. Male fragrances include Vince Camuto for Men and Vince Camuto Homme. These fragrances are available in Eau de Toilette perfumes, lotions and gift sets which include items such as stick deodorant for men and rollerball perfume sticks for women. Vince Camuto has 16 fragrances in the the fragrance market.",
-      "stock": 48,
-      "image": "https://avatars.mds.yandex.net/get-mpic/4334326/img_id7152189713356920281.jpeg/orig",
-      "rating": {
-        "rate": 3.7,
-        "count": 95
-      },
-      "inStock": 48
-    },
-    {
-      "id": "5",
-      "title": "Alexandre.J The Collector Golden Oud Eau de Parfum, 100ml",
-      "price": 95,
-      "description": "Alexander. J reinvents the notion of fragrances. Each fragrance explores a wide range of olfactory notes dosed for a unique design and composition. The raw materials are noble and valuable. As each of them reacts differently to heat. Alexander. J has more than 20 perfumes in the market. The earliest edition was launched in 2012.",
-      "stock": 0,
-      "image": "https://spb.wadoo.ru/upload/iblock/a76/a767e88a45949f1c1e67eae9005cac90.png",
-      "rating": {
-        "rate": 1.2,
-        "count": 14
-      }
-    },
-    {
-      "id": "6",
-      "title": "Parfums de Marly Herod Eau de Parfum, 125ml",
-      "price": 198,
-      "description": "Unforgettable thanks to its addictive presence and unique appeal, this exhilarating fragrance fits within the great lineage of Parfums de Marly. Its bottles features the brand’s equestrian cabinets, embossed on solid and opaque glass. Parfums de Marly has 30 perfumes in the fragrance market. The earliest edition was created in 2009.",
-      "stock": 9,
-      "image": "https://www.laromat.ru/pics/86858MARLY_Herod.jpg",
-      "rating": {
-        "rate": 0,
-        "count": 0
-      }
-    },
-    {
       "id": "7",
       "title": "Aedes de Venustas Oeillet Bengale Eau de Parfum, 100ml",
       "price": 154,

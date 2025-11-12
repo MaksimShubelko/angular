@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IProduct} from "../../../shared/models/product";
 import {ProductService} from "../../services/product.service";
 import {AuthService} from '../../../auth/services/auth.service';
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 })
 export class AppProductComponent {
   @Input() product: IProduct;
-  isVisible: boolean = true;
+  @Output() remove = new EventEmitter<void>();
 
   constructor(private productService: ProductService,
               protected auth: AuthService,
@@ -21,6 +21,6 @@ export class AppProductComponent {
 
   handleDeleteButtonClick() {
     this.productService.delete(this.product.id);
-    this.isVisible = false;
+    this.remove.emit();
   }
 }

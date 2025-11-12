@@ -50,8 +50,8 @@
         <app-product
                 *ngFor="let product of products"
                 [product]="product"
+                (remove)="removeProduct(product)"
                 class="product-tile">
         </app-product>
-
     </div>
 </div>

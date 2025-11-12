@@ -81,4 +81,9 @@ export class HomeComponent implements OnInit {
         }
         this.router.navigate([], { replaceUrl: true });
     }
+
+    removeProduct(deletedProduct: IProduct) {
+        this.products = this.products.filter(product => product.id !== deletedProduct.id);
+        this.countOfProducts = this.products.length;
+    }
 }
