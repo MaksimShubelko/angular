@@ -1,0 +1,16 @@
+<div>
+    <div class="product-main-data" [routerLink]="['/products', product.id]">
+        <app-product-image class="product-image" [imageUrl]="product.image"></app-product-image>
+        <app-product-title [productTitle]="product.title"></app-product-title>
+    </div>
+    <div class="product-actions">
+        <app-add-to-cart-button [isDisabledWhenOutOfStock]="true" [product]="product"></app-add-to-cart-button>
+        <button class="button" [disabled]="!auth.checkIsLoggedIn()" (click)="handleDeleteButtonClick()">Delete
+        </button>
+        <button class="button" [routerLink]="['/product/edit', product.id]">Edit</button>
+    </div>
+    <div class="product-rating-price">
+        <div class="product-rating">{{ product.rating.rate }}★</div>
+        <div class="product-price">${{ product.price }}</div>
+    </div>
+</div>
